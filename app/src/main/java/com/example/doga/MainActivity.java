@@ -3,7 +3,9 @@ package com.example.doga;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,127 +62,213 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public  void ELlenfel(){
-        images= new int[]{R.drawable.paper,R.drawable.rock,R.drawable.scissors};
-        Random r= new Random();
-        int rNum=r.nextInt(images.length);
+    public  void ELlenfel() {
+        images = new int[]{R.drawable.paper, R.drawable.rock, R.drawable.scissors};
+        Random r = new Random();
+        int rNum = r.nextInt(images.length);
         iiv_rock2.setImageResource(images[rNum]);
 
 
-        if (a==rNum)
-        {
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-        }else if( (a==1) && (rNum==0))
-        {
-            pgep++;
-            switch(pgep){
-                case 3:ijh3.setImageResource(R.drawable.heart1);break;
-                case 2:ijh2.setImageResource(R.drawable.heart1);break;
-                case 1:ijh1.setImageResource(R.drawable.heart1);break;
-                default:break;
-            }
-            Context ige= getApplication();
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            CharSequence text="Gép kapot pontot.";
-            int hosz= Toast.LENGTH_LONG;
-            Toast toast= Toast.makeText(ige,text,hosz);
+        if (a == rNum) {
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Mind ketten agyun azt mutatatátok..";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
             toast.show();
-        }
-        else if(a==0 && rNum==2)
-        {
 
+
+
+        } else if ((a == 1) && (rNum == 0)) {
             pgep++;
-            switch(pgep){
-                case 3:ijh3.setImageResource(R.drawable.heart1);break;
-                case 2:ijh2.setImageResource(R.drawable.heart1);break;
-                case 1:ijh1.setImageResource(R.drawable.heart1);break;
-                default:break;
+            switch (pgep) {
+                case 3:
+                    ijh3.setImageResource(R.drawable.heart1);
+                    break;
+                case 2:
+                    ijh2.setImageResource(R.drawable.heart1);
+                    break;
+                case 1:
+                    ijh1.setImageResource(R.drawable.heart1);
+                    break;
+                default:
+                    break;
             }
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            Context ige= getApplication();
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            CharSequence text="Gép kapot pontot.";
-            int hosz= Toast.LENGTH_LONG;
-            Toast toast= Toast.makeText(ige,text,hosz);
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Gép kapot pontot.";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
             toast.show();
-        }
-        else if (a==2 && rNum== 1)
-        {
+        } else if (a == 0 && rNum == 2) {
 
             pgep++;
-            switch(pgep){
-                case 3:ijh3.setImageResource(R.drawable.heart1);break;
-                case 2:ijh2.setImageResource(R.drawable.heart1);break;
-                case 1:ijh1.setImageResource(R.drawable.heart1);break;
-                default:break;
+            switch (pgep) {
+                case 3:
+                    ijh3.setImageResource(R.drawable.heart1);
+                    break;
+                case 2:
+                    ijh2.setImageResource(R.drawable.heart1);
+                    break;
+                case 1:
+                    ijh1.setImageResource(R.drawable.heart1);
+                    break;
+                default:
+                    break;
             }
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            Context ige= getApplication();
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            CharSequence text="Gép kapot pontot.";
-            int hosz= Toast.LENGTH_LONG;
-            Toast toast= Toast.makeText(ige,text,hosz);
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Gép kapot pontot.";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
+            toast.show();
+        } else if (a == 2 && rNum == 1) {
+
+            pgep++;
+            switch (pgep) {
+                case 3:
+                    ijh3.setImageResource(R.drawable.heart1);
+                    break;
+                case 2:
+                    ijh2.setImageResource(R.drawable.heart1);
+                    break;
+                case 1:
+                    ijh1.setImageResource(R.drawable.heart1);
+                    break;
+                default:
+                    break;
+            }
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Gép kapot pontot.";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
+            toast.show();
+        } else if (a == 0 && rNum == 1) {
+            pjat++;
+            switch (pjat) {
+                case 3:
+                    igh3.setImageResource(R.drawable.heart1);
+                    break;
+                case 2:
+                    igh2.setImageResource(R.drawable.heart1);
+                    break;
+                case 1:
+                    igh1.setImageResource(R.drawable.heart1);
+                    break;
+                default:
+                    break;
+            }
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Te kapot pontot.";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
+            toast.show();
+
+        } else if (a == 1 && rNum == 2) {
+            pjat++;
+            switch (pjat) {
+                case 3:
+                    igh3.setImageResource(R.drawable.heart1);
+                    break;
+                case 2:
+                    igh2.setImageResource(R.drawable.heart1);
+                    break;
+                case 1:
+                    igh1.setImageResource(R.drawable.heart1);
+                    break;
+                default:
+                    break;
+            }
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Te kapot pontot.";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
+            toast.show();
+        } else if (a == 2 && rNum == 0) {
+            pjat++;
+            switch (pjat) {
+                case 3:
+                    igh3.setImageResource(R.drawable.heart1);
+                    break;
+                case 2:
+                    igh2.setImageResource(R.drawable.heart1);
+                    break;
+                case 1:
+                    igh1.setImageResource(R.drawable.heart1);
+                    break;
+                default:
+                    break;
+            }
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+
+            Context ige = getApplication();
+            teredmeny.setText("Eredmeny: Ember:" + pjat + " Computer:" + pgep);
+            CharSequence text = "Te kapot pontot.";
+            int hosz = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(ige, text, hosz);
             toast.show();
         }
-        else if(a==0 && rNum== 1)
-        {
-            pjat++;
-            switch(pjat){
-                case 3:igh3.setImageResource(R.drawable.heart1);break;
-                case 2:igh2.setImageResource(R.drawable.heart1);break;
-                case 1:igh1.setImageResource(R.drawable.heart1);break;
-                default:break;
-            }
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            Context ige= getApplication();
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            CharSequence text="Te kapot pontot.";
-            int hosz= Toast.LENGTH_LONG;
-            Toast toast= Toast.makeText(ige,text,hosz);
-            toast.show();
 
-        }else if(a==1 && rNum== 2)
+        if(pjat==3 || pgep == 3)
         {
-            pjat++;
-            switch(pjat){
-                case 3:igh3.setImageResource(R.drawable.heart1);break;
-                case 2:igh2.setImageResource(R.drawable.heart1);break;
-                case 1:igh1.setImageResource(R.drawable.heart1);break;
-                default:break;
-            }
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
 
-            Context ige= getApplication();
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            CharSequence text="Te kapot pontot.";
-            int hosz= Toast.LENGTH_LONG;
-            Toast toast= Toast.makeText(ige,text,hosz);
-            toast.show();
-        }else if(a==2 && rNum==0)
-        {
-            pjat++;
-            switch(pjat){
-                case 3:igh3.setImageResource(R.drawable.heart1);break;
-                case 2:igh2.setImageResource(R.drawable.heart1);break;
-                case 1:igh1.setImageResource(R.drawable.heart1);break;
-                default:break;
-            }
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-
-            Context ige= getApplication();
-            teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
-            CharSequence text="Te kapot pontot.";
-            int hosz= Toast.LENGTH_LONG;
-            Toast toast= Toast.makeText(ige,text,hosz);
-            toast.show();
-        }else if(a==3 ||rNum == 3)
-        {
-            if (a==3)
+            if (pjat==3)
             {
+
                 AlertDialog.Builder alert= new AlertDialog.Builder(this);
                 alert.setTitle("Te nyertél");
-                alert.setMessage("Szeretnél ujra játszani")
+                alert.setMessage("Szeretnél ujra játszani?");
+                alert.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
+                        pgep=0;
+                        pjat=0;
+                        teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
 
+                    }
+                }).create().show();
+                alert.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Várunk visza.",Toast.LENGTH_LONG).show();
+                        finish();
+
+                    }
+                }).create().show();;
+
+            }
+            else{
+
+                AlertDialog.Builder alert= new AlertDialog.Builder(this);
+                alert.setTitle("Gép nyertél");
+                alert.setMessage("Szeretnél ujra játszani?");
+                alert.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText( MainActivity.this,"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
+                        pgep=0;
+                        pjat=0;
+                        teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
+
+                    }
+                }).create().show();
+                alert.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Várunk visza.",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                }).create().show();;
             }
         }
 

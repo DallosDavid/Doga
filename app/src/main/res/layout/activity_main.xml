@@ -34,7 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gép"
-            android:textSize="25sp"/>
+            android:textSize="25sp"
+            android:id="@+id/gep_id"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,7 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Játékos"
-            android:textSize="25sp"/>
+            android:textSize="25sp"
+            android:id="@+id/jat_id"
+            />
         <ImageView
             android:layout_width="30sp"
             android:layout_height="30sp"
@@ -109,11 +113,12 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/gep"
+        android:id="@+id/gep_va"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A gép választása."
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        />
 
     <TextView
         android:layout_width="wrap_content"

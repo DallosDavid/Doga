@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/gh1"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/gh2"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/gh3"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gép"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="                          "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Játékos"
+            android:textSize="25sp"/>
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/jh1"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/jh2"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:src="@drawable/heart2"
+            android:id="@+id/jh3"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/rock"
+            android:id="@+id/iv_rock1"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Te választásod."
+        android:textSize="30sp"
+        android:id="@+id/te1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/rock"
+            android:id="@+id/iv_rock2"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/gep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A gép választása."
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eredmeny: Ember: 0 Computer: 0"
+        android:textSize="25sp"
+        android:id="@+id/eredmeny"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="40sp">
+
+        <Button
+            android:id="@+id/ko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KŐ"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   " />
+
+        <Button
+            android:id="@+id/papir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAPIR" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   " />
+
+        <Button
+            android:id="@+id/ollo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OLLÓ" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

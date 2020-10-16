@@ -230,50 +230,62 @@ public class MainActivity extends AppCompatActivity {
                 alert.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(MainActivity.this,"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
-                        pgep=0;
-                        pjat=0;
-                        teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
+                        Toast.makeText(getApplicationContext(),"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
+                        Alapvisza();
 
                     }
-                }).create().show();
-                alert.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
+                });
+                alert.setNegativeButton("Nem", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(MainActivity.this,"Várunk visza.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Várunk visza.",Toast.LENGTH_LONG).show();
                         finish();
 
                     }
-                }).create().show();;
+                });
+                 alert.show();
 
             }
             else{
 
-                AlertDialog.Builder alert= new AlertDialog.Builder(this);
-                alert.setTitle("Gép nyertél");
-                alert.setMessage("Szeretnél ujra játszani?");
-                alert.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
+                AlertDialog.Builder alert1= new AlertDialog.Builder(this);
+                alert1.setTitle("Gép nyertél");
+                alert1.setMessage("Szeretnél ujra játszani?");
+                alert1.setPositiveButton("Igen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText( MainActivity.this,"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
-                        pgep=0;
-                        pjat=0;
-                        teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
+                        Toast.makeText( getApplicationContext(),"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
+                        Alapvisza();
 
                     }
-                }).create().show();
-                alert.setPositiveButton("Nem", new DialogInterface.OnClickListener() {
+                });
+
+                alert1.setNegativeButton("Nem", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(MainActivity.this,"Várunk visza.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Várunk visza.",Toast.LENGTH_LONG).show();
                         finish();
                     }
-                }).create().show();;
+                });
+                alert1.show();
             }
         }
 
     }
 
+    public void Alapvisza()
+    {
+        pgep=0;
+        pjat=0;
+
+        igh1.setImageResource(R.drawable.heart2);
+        igh2.setImageResource(R.drawable.heart2);
+        igh3.setImageResource(R.drawable.heart2);
+        ijh1.setImageResource(R.drawable.heart2);
+        ijh2.setImageResource(R.drawable.heart2);
+        ijh3.setImageResource(R.drawable.heart2);
+        teredmeny.setText("Eredmeny: Ember:"+pjat+" Computer:"+pgep);
+    }
     public void PKepcserer(){
         iiv_rock1.setImageResource(R.drawable.paper);
         a=0;

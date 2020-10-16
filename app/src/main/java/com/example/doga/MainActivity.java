@@ -18,12 +18,14 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView igh1,igh2,igh3,ijh1,ijh2,ijh3,iiv_rock1,iiv_rock2;
-    private TextView tgep_id,tjat_id,tte1,gep,teredmeny;
-    private Button bko,bpapir,bollo;
+    private TextView tgep_id,tjat_id,tte1,gep,teredmeny,dontszam;
+    private Button bko,bpapir,bollo,bkepko,bkepollo,bkeppapir;
     private int[]images;
     private int a;
     private  int pgep;
     private  int pjat;
+    private  int dontetlenp;
+
 
 
 
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         init();
 
-        bpapir.setOnClickListener(new View.OnClickListener() {
+        bkeppapir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PKepcserer();
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bko.setOnClickListener(new View.OnClickListener() {
+        bkepko.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 KKepcserer();
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bollo.setOnClickListener(new View.OnClickListener() {
+        bkepollo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SKepcserer();
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void ELlenfel() {
+
         images = new int[]{R.drawable.paper, R.drawable.rock, R.drawable.scissors};
         Random r = new Random();
         int rNum = r.nextInt(images.length);
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
             int hosz = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(ige, text, hosz);
             toast.show();
+            dontetlenp++;
+            dontszam.setText("Döntetlenek száma: " + dontetlenp);
 
 
 
@@ -232,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(),"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
                         Alapvisza();
+                        dontetlenp=0;
 
                     }
                 });
@@ -240,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(),"Várunk visza.",Toast.LENGTH_LONG).show();
                         finish();
-
+                        dontetlenp=0;
                     }
                 });
                  alert.show();
@@ -256,6 +262,8 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText( getApplicationContext(),"Sok sikert a játszmához.",Toast.LENGTH_LONG).show();
                         Alapvisza();
+                        dontetlenp=0;
+
 
                     }
                 });
@@ -264,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(),"Várunk visza.",Toast.LENGTH_LONG).show();
-                        finish();
+                        finish();dontetlenp=0;
                     }
                 });
                 alert1.show();
@@ -273,11 +281,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void Alapvisza()
     {
         pgep=0;
         pjat=0;
-
+        dontetlenp=0;
         igh1.setImageResource(R.drawable.heart2);
         igh2.setImageResource(R.drawable.heart2);
         igh3.setImageResource(R.drawable.heart2);
@@ -315,9 +324,11 @@ public class MainActivity extends AppCompatActivity {
         iiv_rock2=findViewById(R.id.iv_rock2);
         gep=findViewById(R.id.gep_va);
         teredmeny=findViewById(R.id.eredmeny);
-        bko=findViewById(R.id.ko);
-        bpapir=findViewById(R.id.papir);
-        bollo=findViewById(R.id.ollo);
+
+        dontszam=findViewById(R.id.dontsz);
+        bkepko =findViewById(R.id.kepko);
+        bkepollo =findViewById(R.id.kepollo);
+        bkeppapir =findViewById(R.id.keppapir);
 
 
     }
